@@ -39,7 +39,7 @@ window.ROKA_CONTEUDO = {
     { id: "fundador", grupo: "fundador", linha: 1, nome: "", sexo: "", sobre: "", cargo: "FUNDADOR", foto: "", posicao: "center", descricao: "" },
 
     // ADMINISTRAÇÃO — cinco quadrados independentes
-    { id: "adm-01", grupo: "administracao", linha: 1, nome: "", sexo: "", sobre: "", cargo: "ADM", foto: "", posicao: "center", descricao: "" },
+    { id: "adm-01", grupo: "administracao", linha: 1, nome: "Douglas", sexo: "", sobre: "", cargo: "ADM", foto: "assets/fotos/douglas.jpg", posicao: "center", descricao: "" },
     { id: "adm-02", grupo: "administracao", linha: 1, nome: "", sexo: "", sobre: "", cargo: "ADM", foto: "", posicao: "center", descricao: "" },
     { id: "adm-03", grupo: "administracao", linha: 1, nome: "", sexo: "", sobre: "", cargo: "ADM", foto: "", posicao: "center", descricao: "" },
     { id: "adm-04", grupo: "administracao", linha: 1, nome: "", sexo: "", sobre: "", cargo: "ADM", foto: "", posicao: "center", descricao: "" },
