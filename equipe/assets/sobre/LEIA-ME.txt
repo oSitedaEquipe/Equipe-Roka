@@ -1,0 +1,9 @@
+Coloque aqui a imagem que deseja mostrar abaixo da história do grupo.
+
+Em conteudo.js, preencha:
+  sobre.imagem: "assets/sobre/imagem.jpg"
+  sobre.descricaoImagem: "Descrição da imagem"
+
+Deixe sobre.imagem vazio para ocultar esse espaço.
+A imagem é exibida inteira, sem cortes, e não abre outra página ao clicar.
+Envie a imagem e o arquivo de conteúdo atualizado ao GitHub.

@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#000000" id="theme-color">
+  <meta name="description" content="Equipe Róka — Membros e Membros não Oficiais.">
+  <title>Equipe Róka</title>
+  <script>
+    try {
+      var savedTheme = localStorage.getItem('roka-tema');
+      if (savedTheme === 'light' || savedTheme === 'dark') document.documentElement.dataset.theme = savedTheme;
+    } catch (error) {}
+  </script>
+  <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./conteudo.js" defer></script>
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#membros">Ir para os membros</a>
+  <header class="site-header">
+    <button class="icon-button menu-toggle" id="open-menu" type="button" aria-label="Abrir menu" aria-controls="navigation-drawer" aria-expanded="false">
+      <svg viewBox="0 0 28 24" aria-hidden="true"><path d="M2 4h24M2 12h24M2 20h24"/></svg>
+    </button>
+    <h1 class="brand" id="titulo-site">
+      <span class="visually-hidden">Equipe Róka</span>
+      <svg class="lettering art--light" width="477" height="94" viewBox="28 130 896 172" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false">
+        <defs><clipPath id="crop-title-light" clipPathUnits="userSpaceOnUse"><rect x="28" y="130" width="896" height="172"/></clipPath></defs>
+        <image href="./assets/artwork/tonalidade-aprovada.png" width="1983" height="793" clip-path="url(#crop-title-light)"/>
+      </svg>
+      <svg class="lettering art--dark" width="468" height="90" viewBox="1016 131 899 171" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false">
+        <defs><clipPath id="crop-title-dark" clipPathUnits="userSpaceOnUse"><rect x="1016" y="131" width="899" height="171"/></clipPath></defs>
+        <image href="./assets/artwork/tonalidade-aprovada.png" width="1983" height="793" clip-path="url(#crop-title-dark)"/>
+      </svg>
+      <span class="registered" aria-hidden="true">®</span>
+    </h1>
+    <button class="icon-button theme-toggle" id="theme-toggle" type="button" aria-label="Ativar tema claro" title="Ativar tema claro">
+      <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.4 1.4m11.2 11.2L19 19M5 19l1.4-1.4M17.6 6.4 19 5"/></svg>
+      <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.2 14A8.5 8.5 0 0 1 10 3.8 8.5 8.5 0 1 0 20.2 14Z"/></svg>
+    </button>
+  </header>
+
+  <dialog class="navigation-drawer" id="navigation-drawer" aria-label="Menu principal">
+    <button class="icon-button" id="close-menu" type="button" aria-label="Fechar menu">
+      <svg viewBox="0 0 28 24" aria-hidden="true"><path d="M2 4h24M2 12h24M2 20h24"/></svg>
+    </button>
+    <nav class="drawer-links" aria-label="Navegação">
+      <a href="#membros">Membros</a>
+      <a href="#membros-nao-oficiais">Membros não Oficiais</a>
+      <button type="button" id="open-about">Sobre</button>
+    </nav>
+  </dialog>
+
+  <main class="page">
+    <section class="intro" aria-label="Imagens da Equipe Róka">
+      <div class="carousel" id="carousel" role="region" aria-roledescription="carrossel" aria-label="Imagens em destaque" tabindex="0">
+        <div class="carousel-stage">
+          <button class="icon-button carousel-arrow" id="previous-slide" type="button" aria-label="Imagem anterior">
+            <svg viewBox="0 0 24 32" aria-hidden="true"><path d="m18 4-13 12 13 12"/></svg>
+          </button>
+          <div class="carousel-frame" id="carousel-frame"></div>
+          <button class="icon-button carousel-arrow" id="next-slide" type="button" aria-label="Próxima imagem">
+            <svg viewBox="0 0 24 32" aria-hidden="true"><path d="m6 4 13 12L6 28"/></svg>
+          </button>
+        </div>
+        <div class="carousel-pagination" id="carousel-pagination" aria-label="Escolher imagem"></div>
+        <p class="visually-hidden" id="carousel-status" aria-live="polite" aria-atomic="true"></p>
+      </div>
+    </section>
+
+    <section class="members" id="membros" aria-labelledby="titulo-membros" tabindex="-1">
+      <h2 class="section-heading heading-members" id="titulo-membros">
+        <span class="visually-hidden">Membros</span>
+        <svg class="lettering art--light" width="258" height="69" viewBox="239 355 480 129" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false">
+          <defs><clipPath id="crop-members-light" clipPathUnits="userSpaceOnUse"><rect x="239" y="355" width="480" height="129"/></clipPath></defs>
+          <image href="./assets/artwork/tonalidade-aprovada.png" width="1983" height="793" clip-path="url(#crop-members-light)"/>
+        </svg>
+        <svg class="lettering art--dark" width="266" height="66" viewBox="1228 353 485 130" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false">
+          <defs><clipPath id="crop-members-dark" clipPathUnits="userSpaceOnUse"><rect x="1228" y="353" width="485" height="130"/></clipPath></defs>
+          <image href="./assets/artwork/tonalidade-aprovada.png" width="1983" height="793" clip-path="url(#crop-members-dark)"/>
+        </svg>
+      </h2>
+      <div id="official-roster" class="official-roster"></div>
+    </section>
+
+    <section class="unofficial" id="membros-nao-oficiais" aria-labelledby="titulo-nao-oficiais" tabindex="-1">
+      <h2 class="section-heading heading-unofficial" id="titulo-nao-oficiais">
+        <span class="visually-hidden">Membros não Oficiais</span>
+        <svg class="lettering art--light" width="528" height="72" viewBox="25 550 932 133" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false">
+          <defs><clipPath id="crop-unofficial-light" clipPathUnits="userSpaceOnUse"><rect x="25" y="550" width="932" height="133"/></clipPath></defs>
+          <image href="./assets/artwork/tonalidade-aprovada.png" width="1983" height="793" clip-path="url(#crop-unofficial-light)"/>
+        </svg>
+        <svg class="lettering art--dark" width="534" height="67" viewBox="1015 550 934 132" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false">
+          <defs><clipPath id="crop-unofficial-dark" clipPathUnits="userSpaceOnUse"><rect x="1015" y="550" width="934" height="132"/></clipPath></defs>
+          <image href="./assets/artwork/tonalidade-aprovada.png" width="1983" height="793" clip-path="url(#crop-unofficial-dark)"/>
+        </svg>
+      </h2>
+      <div id="unofficial-roster" class="members-pyramid"></div>
+    </section>
+
+    <footer class="site-footer">
+      <p class="system-credit">System By Deadmaul 8</p>
+      <hr class="footer-divider">
+      <div class="footer-links">
+        <a id="youtube-link" class="footer-icon" href="https://www.youtube.com/@EquipeRK" target="_blank" rel="noopener noreferrer" aria-label="Abrir o canal da Equipe Róka no YouTube">
+          <svg viewBox="0 0 32 24" aria-hidden="true"><rect x="1" y="2" width="30" height="20" rx="5" fill="currentColor"/><path class="icon-cutout" d="m13 7 9 5-9 5Z"/></svg>
+        </a>
+        <a id="roka-hub-link" class="hub-logo" href="https://i.pinimg.com/1200x/14/64/ac/1464ac9770f67c298f5ec8ae7db65cf0.jpg" target="_blank" rel="noopener noreferrer" aria-label="Abrir Róka Hub">
+          <span>Róka</span><span class="hub-shape">hub</span>
+        </a>
+        <a id="discord-link" class="footer-icon" href="https://discord.gg/sdbYBYmmz" target="_blank" rel="noopener noreferrer" aria-label="Abrir o convite do Discord da Equipe Róka">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="currentColor" d="M20.1 4.2a19.2 19.2 0 0 0-4.6-1.4l-.6 1.2a17.7 17.7 0 0 0-5.8 0l-.6-1.2a19.3 19.3 0 0 0-4.6 1.4C1 8.5.2 12.7.6 16.8a18.8 18.8 0 0 0 5.7 2.9l1.2-1.9-1.8-.9.4-.3a13.6 13.6 0 0 0 11.8 0l.4.3-1.8.9 1.2 1.9a18.8 18.8 0 0 0 5.7-2.9c.5-4.8-.9-9-3.3-12.6Z"/>
+            <ellipse class="icon-cutout" cx="8.3" cy="11.9" rx="1.7" ry="2.1"/><ellipse class="icon-cutout" cx="15.7" cy="11.9" rx="1.7" ry="2.1"/>
+          </svg>
+        </a>
+      </div>
+    </footer>
+  </main>
+
+  <dialog class="profile-sheet" id="profile-sheet" aria-labelledby="profile-name">
+    <header class="profile-sheet-header">
+      <div class="profile-brand" id="profile-brand" role="img" aria-label="Equipe Róka"></div>
+      <button class="icon-button profile-close" id="close-profile" type="button" aria-label="Fechar perfil" autofocus>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 5 14 14M19 5 5 19"/></svg>
+      </button>
+    </header>
+    <div class="profile-sheet-content">
+      <div class="profile-photo-column">
+        <div class="profile-large-photo" id="profile-photo">
+          <div class="profile-photo-placeholder" id="profile-photo-placeholder">
+            <svg width="72" height="82" viewBox="0 0 72 82" aria-hidden="true"><circle cx="36" cy="22" r="15"/><path d="M8 74v-9a28 28 0 0 1 56 0v9"/></svg>
+            <span>Foto do membro</span>
+          </div>
+        </div>
+      </div>
+      <div class="profile-information">
+        <p class="profile-label">Nome</p>
+        <h2 id="profile-name"></h2>
+        <dl class="profile-details">
+          <div><dt>Sexo</dt><dd id="profile-sex"></dd></div>
+          <div><dt>Cargo</dt><dd id="profile-role"></dd></div>
+        </dl>
+        <div class="profile-about"><h3 class="profile-label">Sobre</h3><p id="profile-about"></p></div>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog class="about-dialog" id="about-dialog" aria-labelledby="about-title">
+    <header class="profile-sheet-header">
+      <div class="profile-brand" id="about-brand" role="img" aria-label="Equipe Róka"></div>
+      <button class="icon-button" id="close-about" type="button" aria-label="Fechar Sobre" autofocus>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 5 14 14M19 5 5 19"/></svg>
+      </button>
+    </header>
+    <article class="story-content">
+      <h2 id="about-title">Sobre</h2>
+      <div class="story-rule" aria-hidden="true"></div>
+      <p class="about-copy" id="about-copy"></p>
+      <figure class="story-media" id="about-media" hidden></figure>
+    </article>
+  </dialog>
+</body>
+</html>
