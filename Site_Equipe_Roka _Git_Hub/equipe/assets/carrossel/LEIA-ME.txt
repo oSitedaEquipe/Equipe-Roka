@@ -1,0 +1,1 @@
+Coloque aqui as imagens do carrossel. Depois, edite os campos foto na lista carrossel de conteudo.js. Use caminhos como assets/carrossel/imagem-01.jpg. Cada slide é independente. Não há painel de upload nesta versão estática.

@@ -1,0 +1,13 @@
+COLOQUE SUAS FOTOS NESTA PASTA
+
+Exemplos de nomes: fundador.jpg, adm-01.jpg, membro-01.jpg.
+Evite espaços, acentos e letras maiúsculas nos nomes de arquivos.
+
+No conteudo.js, preencha o perfil correspondente:
+foto: "assets/fotos/fundador.jpg"
+
+Formatos recomendados: JPG, PNG ou WebP. Fotos quadradas com pelo menos
+400 x 400 pixels funcionam bem. O site recorta a foto sem deformá-la.
+O campo posicao pode ser "center", "top" ou "bottom".
+
+Cada quadrado pode receber uma foto e um texto diferentes.
