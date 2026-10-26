@@ -33,7 +33,7 @@ window.ROKA_CONTEUDO = {
   },
   perfis: [
     // DEUS — quadrado com "?" no arquivo original
-    { id: "deus", grupo: "base", linha: 1, nome: "Deus", sexo: "", sobre: "", cargo: "DEUS", foto: "assets/fotos/Valorize.jpg", posicao: "center", descricao: "" },
+    { id: "deus", grupo: "base", linha: 1, nome: "Deus", sexo: "", sobre: "", cargo: "DEUS", foto: "", posicao: "center", descricao: "" },
 
     // FUNDADOR
     { id: "fundador", grupo: "fundador", linha: 1, nome: "Caio", sexo: "ELE/DELE", sobre: "Fundador da Equipe", cargo: "FUNDADOR", foto: "assets/fotos/Valorize.jpg", posicao: "center", descricao: "" },
@@ -55,7 +55,7 @@ window.ROKA_CONTEUDO = {
     // Linha 2: cinco quadrados
     { id: "membro-07", grupo: "membros", linha: 2, nome: "", sexo: "", sobre: "", cargo: "Membro não oficial", foto: "", posicao: "center", descricao: "" },
     { id: "membro-08", grupo: "membros", linha: 2, nome: "", sexo: "", sobre: "", cargo: "Membro não oficial", foto: "", posicao: "center", descricao: "" },
-    { id: "membro-09", grupo: "membros", linha: 2, nome: "", sexo: "", sobre: "", cargo: "Membro não oficial", foto: "", posicao: "center", descricao: "" },
+    { id: "membro-09", grupo: "membros", linha: 2, nome: "LULA", sexo: "ELU/DELU", sobre: "O PAI DO BRASIL", cargo: "Membro não oficial", foto: "assets/fotos/lula.jpg", posicao: "center", descricao: "" },
     { id: "membro-10", grupo: "membros", linha: 2, nome: "", sexo: "", sobre: "", cargo: "Membro não oficial", foto: "", posicao: "center", descricao: "" },
     { id: "membro-11", grupo: "membros", linha: 2, nome: "", sexo: "", sobre: "", cargo: "Membro não oficial", foto: "", posicao: "center", descricao: "" },
     // Linha 3: quatro quadrados
