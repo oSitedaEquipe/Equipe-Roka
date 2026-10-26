@@ -33,17 +33,17 @@ window.ROKA_CONTEUDO = {
   },
   perfis: [
     // DEUS — quadrado com "?" no arquivo original
-    { id: "deus", grupo: "base", linha: 1, nome: "Deus", sexo: "", sobre: "", cargo: "DEUS", foto: "", posicao: "center", descricao: "" },
+    { id: "deus", grupo: "base", linha: 1, nome: "Deus", sexo: "", sobre: "", cargo: "DEUS", foto: "assets/fotos/Valorize.jpg", posicao: "center", descricao: "" },
 
     // FUNDADOR
-    { id: "fundador", grupo: "fundador", linha: 1, nome: "", sexo: "", sobre: "", cargo: "FUNDADOR", foto: "", posicao: "center", descricao: "" },
+    { id: "fundador", grupo: "fundador", linha: 1, nome: "Caio", sexo: "ELE/DELE", sobre: "Fundador da Equipe", cargo: "FUNDADOR", foto: "assets/fotos/Valorize.jpg", posicao: "center", descricao: "" },
 
     // ADMINISTRAÇÃO — cinco quadrados independentes
-    { id: "adm-01", grupo: "administracao", linha: 1, nome: "Douglas", sexo: "", sobre: "", cargo: "ADM", foto: "assets/fotos/douglas.jpg", posicao: "center", descricao: "" },
-    { id: "adm-02", grupo: "administracao", linha: 1, nome: "", sexo: "", sobre: "", cargo: "ADM", foto: "", posicao: "center", descricao: "" },
-    { id: "adm-03", grupo: "administracao", linha: 1, nome: "", sexo: "", sobre: "", cargo: "ADM", foto: "", posicao: "center", descricao: "" },
-    { id: "adm-04", grupo: "administracao", linha: 1, nome: "", sexo: "", sobre: "", cargo: "ADM", foto: "", posicao: "center", descricao: "" },
-    { id: "adm-05", grupo: "administracao", linha: 1, nome: "", sexo: "", sobre: "", cargo: "ADM", foto: "", posicao: "center", descricao: "" },
+    { id: "adm-01", grupo: "administracao", linha: 1, nome: "Douglas", sexo: "ELE/DELE", sobre: "", cargo: "ADM", foto: "assets/fotos/douglas.jpg", posicao: "center", descricao: "" },
+    { id: "adm-02", grupo: "administracao", linha: 1, nome: "Pedro", sexo: "ELE/DELE", sobre: "", cargo: "ADM", foto: "assets/fotos/pedro.jpg", posicao: "center", descricao: "" },
+    { id: "adm-03", grupo: "administracao", linha: 1, nome: "Bruno", sexo: "ELE/DELE", sobre: "", cargo: "ADM", foto: "assets/fotos/bruno.jpg", posicao: "center", descricao: "" },
+    { id: "adm-04", grupo: "administracao", linha: 1, nome: "Adriel", sexo: "ELE/DELE", sobre: "", cargo: "ADM", foto: "assets/fotos/adriel.jpg", posicao: "center", descricao: "" },
+    { id: "adm-05", grupo: "administracao", linha: 1, nome: "Jonas", sexo: "", sobre: "", cargo: "ADM", foto: "", posicao: "center", descricao: "" },
 
     // MEMBROS NÃO OFICIAIS — linha 1: seis quadrados
     { id: "membro-01", grupo: "membros", linha: 1, nome: "", sexo: "", sobre: "", cargo: "Membro não oficial", foto: "", posicao: "center", descricao: "" },
