@@ -18,11 +18,11 @@ window.ROKA_CONTEUDO = {
   versao: 4,
   // Um objeto por posição; preencha foto com o caminho de cada imagem.
   carrossel: [
-    { id: "slide-01", foto: "", descricao: "", posicao: "center" },
-    { id: "slide-02", foto: "", descricao: "", posicao: "center" },
-    { id: "slide-03", foto: "", descricao: "", posicao: "center" },
-    { id: "slide-04", foto: "", descricao: "", posicao: "center" },
-    { id: "slide-05", foto: "", descricao: "", posicao: "center" }
+    { id: "slide-01", foto: "assets/carrossel/festa.jpg", descricao: "", posicao: "center" },
+    { id: "slide-02", foto: "assets/carrossel/niver.jpg", descricao: "", posicao: "center" },
+    { id: "slide-03", foto: "assets/carrossel/nvbr.jpg", descricao: "", posicao: "center" },
+    { id: "slide-04", foto: "assets/carrossel/nvbr2.jpg", descricao: "", posicao: "center" },
+    { id: "slide-05", foto: "assets/carrossel/miranha.jpg", descricao: "", posicao: "center" }
   ],
   // A imagem aparece abaixo da história. Deixe imagem vazio para ocultar.
   sobre: { titulo: "Sobre", texto: "", imagem: "", descricaoImagem: "" },
@@ -55,7 +55,7 @@ window.ROKA_CONTEUDO = {
     // Linha 2: cinco quadrados
     { id: "membro-07", grupo: "membros", linha: 2, nome: "", sexo: "", sobre: "", cargo: "Membro não oficial", foto: "", posicao: "center", descricao: "" },
     { id: "membro-08", grupo: "membros", linha: 2, nome: "", sexo: "", sobre: "", cargo: "Membro não oficial", foto: "", posicao: "center", descricao: "" },
-    { id: "membro-09", grupo: "membros", linha: 2, nome: "LULA", sexo: "ELU/DELU", sobre: "O PAI DO BRASIL", cargo: "Membro não oficial", foto: "assets/fotos/lula.jpg", posicao: "center", descricao: "" },
+    { id: "membro-09", grupo: "membros", linha: 2, nome: "LULA", sexo: "ELU/DELU", sobre: "2027 TEM PICANHA", cargo: "O PAI DO BRASIL", foto: "assets/fotos/lula.jpg", posicao: "center", descricao: "" },
     { id: "membro-10", grupo: "membros", linha: 2, nome: "", sexo: "", sobre: "", cargo: "Membro não oficial", foto: "", posicao: "center", descricao: "" },
     { id: "membro-11", grupo: "membros", linha: 2, nome: "", sexo: "", sobre: "", cargo: "Membro não oficial", foto: "", posicao: "center", descricao: "" },
     // Linha 3: quatro quadrados
