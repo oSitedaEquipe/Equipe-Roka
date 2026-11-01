@@ -25,7 +25,7 @@ window.ROKA_CONTEUDO = {
     { id: "slide-05", foto: "assets/carrossel/miranha.jpg", descricao: "", posicao: "center" }
   ],
   // A imagem aparece abaixo da história. Deixe imagem vazio para ocultar.
-  sobre: { titulo: "Sobre", texto: "Criada em 2022, a Equipe Róka nasceu da união de cinco amigos que, juntos, criam momentos e histórias únicas.\n\nAgora, os membros da Equipe Róka têm um espaço próprio para preservar e compartilhar suas características, fotografias e momentos marcantes.\n\nApoie o criador deste site e contribua com qualquer quantia para ajudar na compra do leite das crianças. 👇\n\nChave PIX:\n197d8b9f-42f0-4970-8683-f3fefc2bfe9c", imagem: "", descricaoImagem: "" },
+  sobre: { titulo: "Sobre", texto: "Criada em 2022 a Equipe Róka  nasceu da união de cinco amigos, que juntos criam momentos e histórias únicas.\n\nOs membros da Equipe Róka finalmente ganham um espaço próprio aonde desfrutam do eterno registro de algumas de suas características, fotografias e momentos pregressos.\n\nApoie o criador deste site e contribua com qualquer quantia para ajudar a comprar o leite das crianças. 👇\n\nChave PIX:\n197d8b9f-42f0-4970-8683-f3fefc2bfe9c", imagem: "assets/fotos/qrcode.jpg", descricaoImagem: "" },
   links: {
     youtube: "https://www.youtube.com/@EquipeRK",
     rokaHub: "https://i.pinimg.com/1200x/14/64/ac/1464ac9770f67c298f5ec8ae7db65cf0.jpg",
