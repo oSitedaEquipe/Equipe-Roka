@@ -25,7 +25,7 @@ window.ROKA_CONTEUDO = {
     { id: "slide-05", foto: "assets/carrossel/miranha.jpg", descricao: "", posicao: "center" }
   ],
   // A imagem aparece abaixo da história. Deixe imagem vazio para ocultar.
-  sobre: { titulo: "Sobre", texto: "", imagem: "", descricaoImagem: "" },
+  sobre: { titulo: "Sobre", texto: "Criada em 2022, a Equipe Róka nasceu da união de cinco amigos que, juntos, criam momentos e histórias únicas.\n\nAgora, os membros da Equipe Róka têm um espaço próprio para preservar e compartilhar suas características, fotografias e momentos marcantes.\n\nApoie o criador deste site e contribua com qualquer quantia para ajudar na compra do leite das crianças. 👇\n\nChave PIX:\n197d8b9f-42f0-4970-8683-f3fefc2bfe9c", imagem: "", descricaoImagem: "" },
   links: {
     youtube: "https://www.youtube.com/@EquipeRK",
     rokaHub: "https://i.pinimg.com/1200x/14/64/ac/1464ac9770f67c298f5ec8ae7db65cf0.jpg",
@@ -43,10 +43,10 @@ window.ROKA_CONTEUDO = {
     { id: "adm-02", grupo: "administracao", linha: 1, nome: "Pedro", sexo: "ELE/DELE", sobre: "", cargo: "ADM", foto: "assets/fotos/pedro.jpg", posicao: "center", descricao: "" },
     { id: "adm-03", grupo: "administracao", linha: 1, nome: "Bruno", sexo: "ELE/DELE", sobre: "", cargo: "ADM", foto: "assets/fotos/bruno.jpg", posicao: "center", descricao: "" },
     { id: "adm-04", grupo: "administracao", linha: 1, nome: "Adriel", sexo: "ELE/DELE", sobre: "", cargo: "ADM", foto: "assets/fotos/adriel.jpg", posicao: "center", descricao: "" },
-    { id: "adm-05", grupo: "administracao", linha: 1, nome: "Jonas", sexo: "", sobre: "", cargo: "ADM", foto: "", posicao: "center", descricao: "" },
+    { id: "adm-05", grupo: "administracao", linha: 1, nome: "Jonas", sexo: "ELE/DELE", sobre: "O Cheiro Deixa Lembranças", cargo: "ADM", foto: "assets/fotos/jonas.jpg", posicao: "center", descricao: "" },
 
     // MEMBROS NÃO OFICIAIS — linha 1: seis quadrados
-    { id: "membro-01", grupo: "membros", linha: 1, nome: "", sexo: "", sobre: "", cargo: "Membro não oficial", foto: "", posicao: "center", descricao: "" },
+    { id: "membro-01", grupo: "membros", linha: 1, nome: "Ramon", sexo: "ELE/DELE", sobre: "A Manivela Que Move o Brasil e a Equipe", cargo: "Membro não oficial", foto: "assets/fotos/ramon.jpg", posicao: "center", descricao: "" },
     { id: "membro-02", grupo: "membros", linha: 1, nome: "", sexo: "", sobre: "", cargo: "Membro não oficial", foto: "", posicao: "center", descricao: "" },
     { id: "membro-03", grupo: "membros", linha: 1, nome: "", sexo: "", sobre: "", cargo: "Membro não oficial", foto: "", posicao: "center", descricao: "" },
     { id: "membro-04", grupo: "membros", linha: 1, nome: "", sexo: "", sobre: "", cargo: "Membro não oficial", foto: "", posicao: "center", descricao: "" },
