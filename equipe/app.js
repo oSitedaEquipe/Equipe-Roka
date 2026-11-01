@@ -198,6 +198,45 @@
   const dots = [];
   let active = 0;
 
+  const zoomDialog = create('dialog', 'carousel-zoom');
+  zoomDialog.id = 'carousel-zoom';
+  zoomDialog.setAttribute('aria-label', 'Imagem do carrossel ampliada');
+  const zoomToolbar = create('div', 'carousel-zoom-toolbar');
+  const zoomCounter = create('span', 'carousel-zoom-counter');
+  const closeZoom = create('button', 'icon-button dialog-close');
+  closeZoom.type = 'button';
+  closeZoom.setAttribute('aria-label', 'Fechar imagem ampliada');
+  closeZoom.autofocus = true;
+  closeZoom.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 5 14 14M19 5 5 19"/></svg>';
+  const zoomFigure = create('figure', 'zoom-figure');
+  const zoomImage = create('img', 'carousel-zoom-image');
+  zoomImage.alt = '';
+  zoomFigure.append(zoomImage);
+  zoomToolbar.append(zoomCounter, closeZoom);
+  zoomDialog.append(zoomToolbar, zoomFigure);
+  document.body.append(zoomDialog);
+  let zoomTrigger = null;
+
+  closeZoom.addEventListener('click', () => zoomDialog.close());
+  zoomDialog.addEventListener('close', () => {
+    zoomImage.removeAttribute('src');
+    if (zoomTrigger && zoomTrigger.isConnected) zoomTrigger.focus({ preventScroll: true });
+  });
+  zoomDialog.addEventListener('click', event => {
+    if (event.target !== zoomDialog) return;
+    const bounds = zoomDialog.getBoundingClientRect();
+    if (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom) zoomDialog.close();
+  });
+
+  function openZoom(image, trigger, index) {
+    if (!image.isConnected || !image.naturalWidth) return;
+    zoomTrigger = trigger;
+    zoomImage.src = image.currentSrc || image.src;
+    zoomImage.alt = image.alt;
+    zoomCounter.textContent = (index + 1) + ' / ' + slides.length;
+    zoomDialog.showModal();
+  }
+
   const showSlide = index => {
     active = (index + slides.length) % slides.length;
     slideNodes.forEach((node, i) => { node.hidden = i !== active; });
@@ -215,17 +254,27 @@
     node.setAttribute('aria-label', 'Imagem ' + (index + 1) + ' de ' + slides.length);
     const photo = String(slide.foto || '').trim();
     if (photo) {
+      const openImage = create('button', 'carousel-opener');
+      openImage.type = 'button';
+      openImage.disabled = true;
+      openImage.setAttribute('aria-haspopup', 'dialog');
+      openImage.setAttribute('aria-controls', 'carousel-zoom');
+      openImage.setAttribute('aria-label', 'Ampliar imagem ' + (index + 1) + ' de ' + slides.length);
       const image = document.createElement('img');
       image.alt = slide.descricao || 'Imagem ' + (index + 1) + ' da Equipe Róka';
       image.decoding = 'async';
       image.loading = index === 0 ? 'eager' : 'lazy';
       image.style.objectPosition = fit(slide.posicao);
+      image.addEventListener('load', () => { openImage.disabled = false; }, { once: true });
       image.addEventListener('error', () => {
+        openImage.disabled = true;
         image.remove();
         node.setAttribute('aria-label', 'Imagem indisponível: ' + (index + 1));
       }, { once: true });
       image.src = photo;
-      node.append(image);
+      openImage.append(image);
+      openImage.addEventListener('click', () => openZoom(image, openImage, index));
+      node.append(openImage);
     }
     node.hidden = index !== 0;
     slideNodes.push(node);
@@ -247,18 +296,48 @@
     event.preventDefault();
     showSlide(moves[event.key]);
     if (event.target.closest('.carousel-pagination')) dots[active].focus();
+    if (event.target.closest('.carousel-opener')) {
+      const targetIndex = active;
+      const button = slideNodes[active].querySelector('.carousel-opener');
+      if (button && !button.disabled) {
+        button.focus({ preventScroll: true });
+      } else {
+        carousel.focus({ preventScroll: true });
+        const image = button && button.querySelector('img');
+        if (image) image.addEventListener('load', () => {
+          if (active === targetIndex && document.activeElement === carousel) button.focus({ preventScroll: true });
+        }, { once: true });
+      }
+    }
   });
   let gesture;
+  let press;
+  let suppressClickUntil = 0;
   frame.addEventListener('pointerdown', event => {
+    press = { x: event.clientX, y: event.clientY, moved: false };
     if (event.pointerType === 'touch') gesture = { x: event.clientX, y: event.clientY };
   });
+  frame.addEventListener('pointermove', event => {
+    if (press && Math.hypot(event.clientX - press.x, event.clientY - press.y) > 10) press.moved = true;
+  });
   frame.addEventListener('pointerup', event => {
+    if (press && (press.moved || Math.hypot(event.clientX - press.x, event.clientY - press.y) > 10)) suppressClickUntil = Date.now() + 500;
+    press = null;
     if (!gesture) return;
     const dx = event.clientX - gesture.x;
     const dy = event.clientY - gesture.y;
     gesture = null;
     if (Math.abs(dx) > 40 && Math.abs(dy) < 60) showSlide(active + (dx < 0 ? 1 : -1));
   });
-  frame.addEventListener('pointercancel', () => { gesture = null; });
+  frame.addEventListener('pointercancel', () => {
+    gesture = null;
+    press = null;
+    suppressClickUntil = Date.now() + 500;
+  });
+  frame.addEventListener('click', event => {
+    if (Date.now() >= suppressClickUntil) return;
+    event.preventDefault();
+    event.stopImmediatePropagation();
+  }, true);
   showSlide(0);
 })();

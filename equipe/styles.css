@@ -13,7 +13,7 @@
   /* O MESMO valor controla os dois vãos abaixo dos subtítulos. */
   --subtitle-gap: clamp(64px, 10vw, 3cm);
   /* Todas as 28 molduras têm a mesma medida, inclusive no celular. */
-  --profile-size: min(150px, calc((100vw - 64px - 5 * var(--member-gap)) / 6));
+  --profile-size: min(200px, calc((100vw - 64px - 5 * var(--member-gap)) / 6), calc((1320px - 5 * var(--member-gap)) / 6));
   --official-size: var(--profile-size);
   --member-size: var(--profile-size);
   --official-gap: clamp(8px, 2.5vw, 36px);
@@ -178,6 +178,12 @@ h1, h2, p, figure { margin: 0; }
 .heading-members { width: clamp(180px, 34vw, 350px); max-width: 72%; }
 .heading-unofficial { width: min(820px, 82%); }
 .official-roster, .members-pyramid { margin-top: var(--subtitle-gap); }
+.official-roster, .members-pyramid {
+  position: relative;
+  left: 50%;
+  width: min(1320px, calc(100vw - 64px));
+  transform: translateX(-50%);
+}
 .leaders { display: flex; flex-direction: column; align-items: center; gap: 32px; }
 .administrators {
   display: flex;
@@ -286,7 +292,7 @@ dialog::backdrop { background: rgb(0 0 0 / .4); }
 .profile-sheet { width: min(960px, calc(100% - 48px)); max-height: calc(100dvh - 48px); padding: 0; overflow: auto; border: 1px solid var(--divider); box-shadow: 0 28px 100px rgb(0 0 0 / .35); }
 .profile-sheet::backdrop { background: rgb(0 0 0 / .72); }
 .profile-sheet-header { position: sticky; top: 0; z-index: 1; height: 108px; padding: 26px 32px; border-bottom: 1px solid var(--divider); display: flex; align-items: center; justify-content: space-between; gap: 20px; background: var(--background); }
-.profile-brand { width: 242px; line-height: 0; }
+.profile-brand { width: 242px; min-width: 0; line-height: 0; }
 .profile-close { align-self: center; }
 .profile-sheet-content { display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: 42px; padding: 42px 38px 48px; }
 .profile-large-photo { position: relative; width: 300px; aspect-ratio: 1; border: 1px solid var(--divider); color: var(--muted); }
@@ -305,6 +311,8 @@ dialog::backdrop { background: rgb(0 0 0 / .4); }
 .skip-link:focus { transform: translateY(0); }
 .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
 @media (max-width: 600px) {
+  :root { --profile-size: min(200px, calc((100vw - 48px - 5 * var(--member-gap)) / 6)); }
+  .official-roster, .members-pyramid { width: calc(100vw - 48px); }
   .site-header { padding: 20px 12px 0; gap: 4px; }
   .page { width: calc(100% - 32px); }
   .brand { margin-top: 5px; }
@@ -339,9 +347,57 @@ dialog::backdrop { background: rgb(0 0 0 / .4); }
   .profile-large-photo { width: min(100%, 260px); margin-inline: auto; }
   #profile-name { font-size: 30px; }
   .profile-details { gap: 18px; }
-  .profile-close { width: 32px; height: 32px; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}
+
+/* Fotos do carrossel: abertura na mesma página, mantendo a imagem inteira. */
+.carousel-opener {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  cursor: zoom-in;
+}
+.carousel-opener:focus-visible { outline-offset: -6px; }
+.carousel-zoom {
+  width: min(1320px, calc(100% - 48px));
+  max-width: none;
+  max-height: calc(100dvh - 32px);
+  padding: 12px 16px 20px;
+  margin: auto;
+  overflow: auto;
+}
+.carousel-zoom::backdrop { background: rgb(0 0 0 / .88); }
+.carousel-zoom-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 44px; margin-bottom: 8px; }
+.carousel-zoom-counter { color: var(--muted); font: 12px / 1.5 Arial, sans-serif; }
+.carousel-zoom .zoom-figure { display: flex; justify-content: center; align-items: center; margin: 0; }
+.carousel-zoom-image { display: block; max-width: 100%; width: auto; height: auto; max-height: calc(100dvh - 140px); object-fit: contain; }
+
+/* Mesmo centro geométrico e área de toque em todos os botões X. */
+.dialog-close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  flex: 0 0 44px;
+  width: 44px;
+  min-width: 44px;
+  height: 44px;
+  min-height: 44px;
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+}
+.dialog-close svg { display: block; flex: 0 0 24px; width: 24px; height: 24px; }
+@media (max-width: 600px) {
+  .carousel-zoom { width: calc(100% - 16px); max-height: calc(100dvh - 16px); padding: 8px 10px 16px; }
+  .carousel-zoom-image { max-height: calc(100dvh - 112px); }
 }
